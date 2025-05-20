@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SRZ Sacabollos | Inicio</title>
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn ease-in 1s forwards;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-black text-white h-screen overflow-hidden relative">
+
+  <!-- Fondo -->
+  <div class="absolute inset-0 -z-10">
+    <img src="fondo-srz.jpg" alt="SRZ Sacabollos" class="w-full h-full object-cover object-center">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="flex flex-col items-center justify-center h-full text-center px-4 fade-in">
+    <!-- Logo -->
+    <img src="logo.png" alt="SRZ Sacabollos" class="w-40 md:w-52 mb-6 drop-shadow-lg" />
+
+    <!-- Frase -->
+    <p class="text-xl md:text-2xl italic mb-8">Defendiendo el legado del primer sacabollos del Uruguay</p>
+
+    <!-- Botones redes -->
+    <div class="flex gap-6 text-3xl">
+      <a href="https://wa.me/59898800997" target="_blank" aria-label="WhatsApp" class="hover:text-green-500 transition">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://www.instagram.com/srzsacabollos" target="_blank" aria-label="Instagram" class="hover:text-pink-400 transition">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

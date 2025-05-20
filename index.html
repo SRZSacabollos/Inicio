@@ -2,110 +2,71 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SRZ Sacabollos | Inicio</title>
-  <link rel="icon" href="/favicon.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SRZ Sacabollos</title>
+  <meta name="description" content="Especialistas en sacabollos en Montevideo. SRZ Sacabollos. Defendiendo el legado del primer sacabollos del Uruguay.">
+  <meta name="keywords" content="sacabollos, chapa y pintura, Montevideo, autos, reparación, granizo, cerámicos, sin pintar, pdr, desabollado, saca bollos, bollos, desabollado sin pintar">
+  <meta name="author" content="SRZ Sacabollos">
+  <link rel="icon" href="favicon.png" type="image/png">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-  <style>
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn ease-in 1s forwards;
-    }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-  </style>
 </head>
-<body class="bg-black text-white h-screen overflow-hidden relative">
+<body class="bg-black text-white font-sans scroll-smooth">
 
-  <!-- Fondo -->
-  <div class="absolute inset-0 -z-10">
-    <img src="fondo.jpg" alt="SRZ Sacabollos" class="w-full h-full object-cover object-center">
-    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-  </div>
-
-  <!-- Contenido principal -->
-  <div class="flex flex-col items-center justify-center h-full text-center px-4 fade-in">
-    <!-- Logo -->
-    <img src="logo.png" alt="SRZ Sacabollos" class="w-40 md:w-52 mb-6 drop-shadow-lg" />
-
-    <!-- Frase -->
-    <p class="text-xl md:text-2xl italic mb-8">Defendiendo el legado del primer sacabollos del Uruguay</p>
-
-    <!-- Botones redes -->
-    <div class="flex gap-6 text-3xl">
-      <a href="https://wa.me/59898800997" target="_blank" aria-label="WhatsApp" class="hover:text-green-500 transition">
-        <i class="fab fa-whatsapp"></i>
+  <!-- Navbar -->
+  <header class="bg-white shadow-md fixed top-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+      <!-- Logo -->
+      <a href="#inicio" class="flex items-center">
+        <img src="logo.png" alt="SRZ Logo" class="h-10 w-auto">
+        <span class="ml-2 font-bold text-gray-800 text-lg">SRZ Sacabollos</span>
       </a>
-      <a href="https://www.instagram.com/srzsacabollos" target="_blank" aria-label="Instagram" class="hover:text-pink-400 transition">
-        <i class="fab fa-instagram"></i>
-      </a>
+
+      <!-- Botón móvil -->
+      <button id="menu-btn" class="sm:hidden text-gray-800 focus:outline-none text-2xl">
+        ☰
+      </button>
+
+      <!-- Enlaces -->
+      <nav id="menu" class="hidden sm:flex space-x-6 text-gray-700 font-medium">
+        <a href="#inicio" class="hover:text-red-700 transition">Inicio</a>
+        <a href="#galeria" class="hover:text-red-700 transition">Galería</a>
+      </nav>
     </div>
-  </div>
+
+    <!-- Menú móvil -->
+    <div id="mobile-menu" class="sm:hidden hidden bg-white border-t border-gray-200 px-4 py-2">
+      <a href="#inicio" class="block py-2 text-gray-700 hover:text-red-700">Inicio</a>
+      <a href="#galeria" class="block py-2 text-gray-700 hover:text-red-700">Galería</a>
+    </div>
+  </header>
+  <div class="h-16"></div>
+
+  <!-- Inicio -->
+  <section id="inicio" class="flex items-center justify-center h-screen bg-cover bg-center relative" style="background-image: url('fondo.jpg');">
+    <div class="bg-black bg-opacity-60 p-6 rounded-xl text-center">
+      <img src="logo.png" alt="SRZ Sacabollos" class="mx-auto mb-6 max-w-xs">
+      <h1 class="text-3xl md:text-5xl font-bold">Defendiendo el legado del primer sacabollos del Uruguay</h1>
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <section id="galeria" class="py-16 bg-white text-black">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Galería de Trabajos</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <img src="galeria/1.jpg" alt="Trabajo 1" class="rounded-xl shadow">
+        <img src="galeria/2.jpg" alt="Trabajo 2" class="rounded-xl shadow">
+        <img src="galeria/3.jpg" alt="Trabajo 3" class="rounded-xl shadow">
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
 </body>
-  <section id="servicios" class="bg-gray-100 py-16 px-4 sm:px-8 lg:px-24">
-  <div class="max-w-7xl mx-auto text-center">
-    <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">Nuestros Servicios</h2>
-    <p class="text-gray-600 text-lg mb-12">Soluciones profesionales para dejar tu auto como nuevo</p>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Sacabollos -->
-      <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
-        <div class="flex justify-center mb-4">
-          <i data-lucide="hammer" class="w-10 h-10 text-red-700"></i>
-        </div>
-        <h3 class="text-xl font-semibold mb-2 text-gray-800">Sacabollos (PDR)</h3>
-        <p class="text-gray-600">Reparación sin pintura de abolladuras, incluso por granizo. Técnica precisa y rápida.</p>
-      </div>
-
-      <!-- Pulido -->
-      <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
-        <div class="flex justify-center mb-4">
-          <i data-lucide="sparkles" class="w-10 h-10 text-red-700"></i>
-        </div>
-        <h3 class="text-xl font-semibold mb-2 text-gray-800">Pulido</h3>
-        <p class="text-gray-600">Eliminamos rayas, microarañazos y restauramos el brillo profundo del vehículo.</p>
-      </div>
-
-      <!-- Tratamiento Cerámico -->
-      <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
-        <div class="flex justify-center mb-4">
-          <i data-lucide="shield-check" class="w-10 h-10 text-red-700"></i>
-        </div>
-        <h3 class="text-xl font-semibold mb-2 text-gray-800">Tratamiento Cerámico</h3>
-        <p class="text-gray-600">Protección a largo plazo con acabado brillante. Resistencia al clima y a rayones.</p>
-      </div>
-
-      <!-- Restauración de ópticas -->
-      <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
-        <div class="flex justify-center mb-4">
-          <i data-lucide="sun" class="w-10 h-10 text-red-700"></i>
-        </div>
-        <h3 class="text-xl font-semibold mb-2 text-gray-800">Restauración de ópticas</h3>
-        <p class="text-gray-600">Faros opacos o amarillentos vuelven a verse como nuevos. Mejor visibilidad y estética.</p>
-      </div>
-
-      <!-- Limpieza de tapizados -->
-      <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
-        <div class="flex justify-center mb-4">
-          <i data-lucide="sofa" class="w-10 h-10 text-red-700"></i>
-        </div>
-        <h3 class="text-xl font-semibold mb-2 text-gray-800">Limpieza de tapizados</h3>
-        <p class="text-gray-600">Quitamos manchas, suciedad y malos olores. Interior fresco y como nuevo.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Lucide Icons -->
-<script src="https://unpkg.com/lucide@latest"></script>
-<script>
-  lucide.createIcons();
-</script>
-
 </html>
-

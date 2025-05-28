@@ -106,5 +106,74 @@
       mobileMenu.classList.toggle('hidden');
     });
   </script>
+   <!-- Agrega al final del <body> (antes del </body>) -->
+
+<!-- Lightbox Overlay -->
+<div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50">
+  <button id="close-lightbox" class="absolute top-4 right-4 text-white text-4xl">&times;</button>
+  <button id="prev" class="absolute left-4 text-white text-5xl opacity-50 hover:opacity-100">&#10094;</button>
+  <div class="relative">
+    <img id="lightbox-img" src="" alt="" class="max-h-[90vh] max-w-[90vw] rounded-xl">
+    <div id="lightbox-label" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-60 px-4 py-2 rounded text-white text-lg font-bold"></div>
+  </div>
+  <button id="next" class="absolute right-4 text-white text-5xl opacity-50 hover:opacity-100">&#10095;</button>
+</div>
+
+<script>
+  const images = document.querySelectorAll('#galeria img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxLabel = document.getElementById('lightbox-label');
+  const closeBtn = document.getElementById('close-lightbox');
+  const prevBtn = document.getElementById('prev');
+  const nextBtn = document.getElementById('next');
+
+  let currentIndex = 0;
+
+  // Abrir lightbox al hacer click
+  images.forEach((img, index) => {
+    img.addEventListener('click', () => {
+      currentIndex = index;
+      showImage();
+      lightbox.classList.remove('hidden');
+    });
+  });
+
+  // Cerrar lightbox
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.add('hidden');
+  });
+
+  // Navegar a imagen anterior
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage();
+  });
+
+  // Navegar a imagen siguiente
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage();
+  });
+
+  function showImage() {
+    const imgSrc = images[currentIndex].src;
+    lightboxImg.src = imgSrc;
+    lightboxLabel.textContent = (currentIndex + 1) % 2 === 1 ? 'ANTES' : 'DESPUÉS';
+  }
+
+  // Cerrar lightbox al presionar ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.add('hidden');
+    if (e.key === 'ArrowLeft') {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage();
+    }
+    if (e.key === 'ArrowRight') {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage();
+    }
+  });
+</script>
 </body>
 </html>

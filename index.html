@@ -1,25 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5TB6LDQJRR"></script>
-   <style>
-@font-face {
-  font-family: 'Aero';
-  src: url('/fuentes/Aero-Regular.woff2') format('woff2'),
-       url('/fuentes/Aero-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-</style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5TB6LDQJRR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5TB6LDQJRR');
+  </script>
 
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-5TB6LDQJRR');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SRZ Sacabollos</title>
@@ -28,8 +18,24 @@
   <meta name="author" content="SRZ Sacabollos">
   <link rel="icon" href="favicon.png" type="image/png">
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fuente Aero -->
+  <style>
+    @font-face {
+      font-family: 'Aero';
+      src: url('/Fuentes/Aero.woff2') format('woff2'),
+           url('/Fuentes/Aero.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* Aplicar la fuente Aero globalmente */
+    body {
+      font-family: 'Aero', sans-serif;
+    }
+  </style>
 </head>
-<body class="bg-black text-white font-sans scroll-smooth">
+<body class="bg-black text-white scroll-smooth">
 
   <!-- Navbar -->
   <header class="bg-white shadow-md fixed top-0 w-full z-50">

@@ -193,56 +193,40 @@
   });
 </script>
   <!-- Sección Contacto -->
-<section id="contacto" class="bg-black text-white py-12 px-4 border-t border-gray-700">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
-    
-    <!-- Información de contacto -->
-    <div>
-      <h2 class="text-3xl font-bold text-red-700 mb-4">Contacto</h2>
-      <p class="mb-4">¿Querés consultarnos? Escribinos y te respondemos a la brevedad.</p>
-      <ul class="space-y-2 text-lg">
-        <li><strong>📍 Dirección:</strong> Presidente Giro 2475 esq Carlos Anaya, Montevideo, Uruguay</li>
-        <li><strong>📞 WhatsApp:</strong> <a href="https://wa.me/59812345678" target="_blank" class="text-red-500 hover:underline">+598 123 456 78</a></li>
-        <li><strong>📧 Email:</strong> <a href="mailto:srzsacabollos@gmail.com" class="text-red-500 hover:underline">srzsacabollos@gmail.com</a></li>
-        <li><strong>🔗 Instagram:</strong> <a href="https://instagram.com/srzsacabollos" target="_blank" class="text-red-500 hover:underline">@srzsacabollos</a></li>
-      </ul>
+<!-- Contacto -->
+<section id="contacto" class="bg-[#fdfdfc] text-[#4a6670] py-10 px-4">
+  <div class="max-w-6xl mx-auto text-center mb-8">
+    <h2 class="text-3xl font-bold mb-4 font-aero">Contacto</h2>
+    <p class="text-lg">Podés comunicarte con nosotros a través de:</p>
+    <div class="flex justify-center items-center gap-8 mt-6 flex-wrap">
+      <!-- WhatsApp -->
+      <a href="https://wa.me/59812345678" target="_blank" aria-label="WhatsApp">
+        <img src="/iconos/whatsapp.png" alt="WhatsApp" class="w-10 h-10 hover:scale-110 transition" />
+      </a>
+      <!-- Gmail -->
+      <a href="mailto:srzsacabollos@gmail.com" target="_blank" aria-label="Email">
+        <img src="/iconos/correo.png" alt="Email" class="w-10 h-10 hover:scale-110 transition" />
+      </a>
+      <!-- Instagram -->
+      <a href="https://instagram.com/tuusuario" target="_blank" aria-label="Instagram">
+        <img src="/iconos/instagram.png" alt="Instagram" class="w-10 h-10 hover:scale-110 transition" />
+      </a>
     </div>
+  </div>
 
-    <!-- Formulario de contacto -->
-    <div>
-      <form class="space-y-4" action="mailto:srzsacabollos@gmail.com" method="POST" enctype="text/plain">
-        <div>
-          <label for="nombre" class="block mb-1">Nombre y Apellido</label>
-          <input type="text" id="nombre" name="Nombre" required class="w-full p-2 rounded bg-gray-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-700">
-        </div>
-        <div>
-          <label for="celular" class="block mb-1">Celular</label>
-          <input type="tel" id="celular" name="Celular" required class="w-full p-2 rounded bg-gray-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-700">
-        </div>
-        <div>
-          <label for="mensaje" class="block mb-1">Mensaje</label>
-          <textarea id="mensaje" name="Mensaje" rows="4" required class="w-full p-2 rounded bg-gray-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-700"></textarea>
-        </div>
-        <button type="submit" class="bg-red-700 hover:bg-red-800 text-white font-bold py-2 px-4 rounded">Enviar</button>
-      </form>
-    </div>
+  <!-- Mapa -->
+  <div class="h-72 md:h-96 w-full overflow-hidden rounded-xl shadow-lg">
+    <a href="https://www.google.com/maps/place/SRZ+Sacabollos/@-34.910000,-56.160000,17z" target="_blank" rel="noopener noreferrer">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.6667234052684!2d-56.16658842351954!3d-34.8897143726599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f81d499c2a8a1%3A0x1faca0992cb7525d!2sSRZ%20Sacabollos!5e0!3m2!1ses!2suy!4v1750351553994!5m2!1ses!2suy" 
+        class="w-full h-full border-0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Ubicación de SRZ Sacabollos"
+      ></iframe>
+    </a>
   </div>
-  <!-- Mapa de ubicación - ancho completo dentro de la sección -->
-<div class="w-screen max-w-none mt-12 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-4">
-  <h3 class="text-2xl font-semibold mb-4 text-center text-red-700">¿Dónde estamos?</h3>
-  <div class="w-full h-72 md:h-96 border-t-4 border-b-4 border-red-700">
-    <iframe 
-     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.6667234052684!2d-56.16658842351954!3d-34.8897143726599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f81d499c2a8a1%3A0x1faca0992cb7525d!2sSRZ%20Sacabollos!5e0!3m2!1ses!2suy!4v1750351553994!5m2!1ses!2suy" 
-      width="100%" 
-      height="100%" 
-      style="border:0;" 
-      allowfullscreen="" 
-      loading="lazy" 
-      referrerpolicy="no-referrer-when-downgrade"
-      class="w-full h-full">
-    </iframe>
-  </div>
-</div>
 </section>
 </body>
 </html>

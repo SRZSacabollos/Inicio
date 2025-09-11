@@ -87,6 +87,55 @@
     </div>
   </section>
 
+  <!-- Sección Presentación -->
+<section id="presentacion" class="bg-white text-gray-800 py-20 px-6">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+    <!-- Imagen -->
+    <div class="flex justify-center">
+      <img src="presentacion.jpg" 
+           alt="Desabollado artesanal SRZ" 
+           class="rounded-2xl shadow-xl w-full md:w-4/5 transform transition duration-700 ease-in-out hover:scale-105 hover:shadow-2xl opacity-0 translate-y-6 animate-fade-in">
+    </div>
+
+    <!-- Texto -->
+    <div class="opacity-0 translate-y-6 animate-fade-in animation-delay-300">
+      <h2 class="text-4xl font-bold mb-6 font-aero text-red-700">Desabollado Artesanal</h2>
+      <p class="text-lg leading-relaxed mb-6">
+        El método conocido como <strong>“SACABOLLOS”</strong>, consiste en la reparación artesanal, 
+        permitiendo remover una amplia gama de abolladuras en las diferentes piezas exteriores de un vehículo 
+        evitando re-pintarlas, siempre y cuando la superficie o el cuerpo de la pintura no estén dañados. 
+        Este sistema es sin dudas el más beneficioso para el cliente, ya que mantiene el valor y estado original de su automóvil.
+      </p>
+
+      <h3 class="text-2xl font-semibold mb-4 text-gray-700">SRZ por F. Suárez</h3>
+      <p class="text-lg leading-relaxed">
+        Mi nombre es <strong>Fernando Suárez</strong> y llevo dedicándome a esta especialidad durante varios años, 
+        comenzando mi actividad desde muy joven siguiendo con la tradición familiar, 
+        pues mi padre(Hugo Suarez) fue el pionero de este oficio en el país dedicando toda su vida a este arte que hoy conocemos como "Sacabollos". 
+        Al correr el tiempo, fui tomando este oficio como mío y perfeccionándolo con mi sello personal 
+        para brindar lo mejor a mis clientes.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Animaciones personalizadas -->
+<style>
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease forwards;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 0.3s;
+  }
+</style>
+
   <!-- Galería -->
  <section id="galeria" class="bg-black py-10 px-4">
   <h2 class="text-center text-white text-3xl mb-6">Galería de trabajos realizados</h2>

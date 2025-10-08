@@ -312,23 +312,23 @@
   document.addEventListener("DOMContentLoaded", loadGoogleReviews);
 </script>
   
- <section id="reviews" class="bg-gray-100 py-12 text-center">
-  <div class="max-w-5xl mx-auto px-4">
-    <h2 class="text-3xl font-bold mb-6 text-gray-800">Opiniones de nuestros clientes</h2>
-    
-    <div class="flex justify-center items-center mb-6">
-      <a 
-        href="https://search.google.com/local/writereview?placeid=ChIJoajCmdSBn5URXVK3LJmgrB8" 
-        target="_blank"
-        class="bg-gray-700 text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-all shadow-sm"
-      >
-        Dejanos tu valoración ⭐
-      </a>
-    </div>
+<section id="reviews" class="py-20 bg-gray-50 text-center">
+  <h2 class="text-3xl font-bold text-gray-800 mb-6">Opiniones de nuestros clientes</h2>
+  <div id="rating-summary"></div>
 
-    <div id="reviews-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  <!-- Carrusel -->
+  <div id="carousel-container" class="relative max-w-3xl mx-auto overflow-hidden">
+    <div id="reviews-container" class="flex transition-transform duration-700 ease-in-out"></div>
   </div>
+
+  <!-- Botón para valorar -->
+  <a href="https://www.google.com/maps/place/SRZ+Sacabollos/@-34.901257,-56.178977,17z/data=!4m7!3m6!1s0x959f8177098ca8a3:0x1fa0a66c2cb52e5d!8m2!3d-34.901257!4d-56.176402!9m1!1b1!16s%2Fg%2F11c6k9kz3z"
+     target="_blank"
+     class="inline-block mt-10 bg-gray-700 hover:bg-gray-800 text-white font-semibold py-3 px-6 rounded-xl transition-all">
+     Dejanos tu valoración en Google ⭐
+  </a>
 </section>
+
 
  
 
@@ -378,7 +378,8 @@
     </a>
   </div>
 </section>
-  <script>
+
+<script>
   // ID del lugar (SRZ Sacabollos)
   const placeId = "ChIJoajCmdSBn5URXVK3LJmgrB8";
 

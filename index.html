@@ -322,11 +322,14 @@
   </div>
 
   <!-- Botón para valorar -->
-  <a href="https://www.google.com/maps/place/SRZ+Sacabollos/@-34.901257,-56.178977,17z/data=!4m7!3m6!1s0x959f8177098ca8a3:0x1fa0a66c2cb52e5d!8m2!3d-34.901257!4d-56.176402!9m1!1b1!16s%2Fg%2F11c6k9kz3z"
-     target="_blank"
-     class="inline-block mt-10 bg-gray-700 hover:bg-gray-800 text-white font-semibold py-3 px-6 rounded-xl transition-all">
-     Dejanos tu valoración en Google ⭐
-  </a>
+  <a
+  href="https://www.google.com/maps/place/?q=place_id:ChIJoajCmdSBn5URXVK3LJmgrB8"
+  target="_blank"
+  class="text-gray-600 bg-white px-4 py-2 rounded transition hover:text-gray-800 hover:underline"
+>
+  Dejá tu valoración en Google
+</a>
+
 </section>
 
 
@@ -380,7 +383,6 @@
 </section>
 
 <script>
-  // ID del lugar (SRZ Sacabollos)
   const placeId = "ChIJoajCmdSBn5URXVK3LJmgrB8";
 
   function initMap() {
@@ -393,46 +395,72 @@
       },
       (place, status) => {
         if (status === google.maps.places.PlacesServiceStatus.OK && place.reviews) {
-          // Mostrar valoración general
+          const summary = document.getElementById('rating-summary');
           const container = document.getElementById('reviews-container');
-          const titleContainer = document.querySelector('#reviews h2');
 
-          const ratingHTML = `
-            <div class="text-xl text-gray-700 mb-8">
-              <strong>${place.name}</strong><br>
-              ⭐ ${place.rating.toFixed(1)} / 5 (${place.user_ratings_total} valoraciones)
+          // Mostrar resumen de valoración
+          summary.innerHTML = `
+            <div class="bg-white shadow-md rounded-2xl p-6 border border-gray-100">
+              <h3 class="text-2xl font-bold text-gray-800 mb-3">${place.name}</h3>
+              <p class="text-yellow-500 text-3xl font-semibold">⭐ ${place.rating.toFixed(1)}</p>
+              <p class="text-gray-500 mt-2">Basado en ${place.user_ratings_total} valoraciones</p>
             </div>
           `;
-          titleContainer.insertAdjacentHTML('afterend', ratingHTML);
 
-          // Mostrar las últimas 5 reseñas de 5 estrellas
-          const topReviews = place.reviews
-            .filter(r => r.rating === 5)
-            .slice(0, 5);
+          // Tomar las mejores reseñas
+          const topReviews = place.reviews.filter(r => r.rating === 5).slice(0, 5);
 
           topReviews.forEach(review => {
+            const profilePhoto = review.profile_photo_url
+              ? `<img src="${review.profile_photo_url}" alt="${review.author_name}" class="w-10 h-10 rounded-full mr-3">`
+              : `<div class="w-10 h-10 rounded-full bg-gray-300 mr-3 flex items-center justify-center text-gray-600 font-bold text-sm">${review.author_name.charAt(0)}</div>`;
+
             const reviewHTML = `
-              <div class="bg-white shadow-lg rounded-xl p-6 text-left transition-all hover:shadow-xl">
-                <div class="flex items-center mb-2">
-                  <span class="font-semibold text-gray-800">${review.author_name}</span>
-                  <span class="ml-auto text-yellow-500">★★★★★</span>
+              <div class="min-w-full flex-shrink-0 px-4">
+                <div class="bg-white shadow-lg rounded-2xl p-6 h-full flex flex-col justify-between text-left border border-gray-100">
+                  <div>
+                    <div class="flex items-center mb-3">
+                      ${profilePhoto}
+                      <div>
+                        <p class="font-semibold text-gray-800 leading-tight">${review.author_name}</p>
+                        <p class="text-yellow-500 text-sm">★★★★★</p>
+                      </div>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed line-clamp-5">${review.text}</p>
+                  </div>
+                  <p class="text-gray-400 text-xs mt-4">${review.relative_time_description}</p>
                 </div>
-                <p class="text-gray-600 text-sm">${review.text}</p>
-                <p class="text-gray-400 text-xs mt-2">${review.relative_time_description}</p>
               </div>
             `;
             container.insertAdjacentHTML('beforeend', reviewHTML);
           });
+
+          // Lógica del carrusel automático
+          let index = 0;
+          const total = topReviews.length;
+
+          function moveCarousel() {
+            container.style.transform = `translateX(-${index * 100}%)`;
+          }
+
+          setInterval(() => {
+            index = (index + 1) % total;
+            moveCarousel();
+          }, 5000);
+        } else {
+          document.getElementById('rating-summary').innerHTML = `
+            <p class="text-gray-500">No se pudieron cargar las reseñas en este momento.</p>
+          `;
         }
       }
     );
   }
 </script>
 
-<!-- Cargar la API de Google con tu clave -->
 <script async
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcMWH6o18wXpqU2kFn3S7hssq_lyIrA8o&libraries=places&callback=initMap">
 </script>
+
 
 </body>
 </html>

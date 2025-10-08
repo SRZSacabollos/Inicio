@@ -271,46 +271,6 @@
     }
   });
 </script>
-   <script>
-  async function loadGoogleReviews() {
-    const placeId = "ChIJoajCmdSBn5URXVK3LJmgrB8";
-    const apiKey = "AIzaSyDcMWH6o18wXpqU2kFn3S7hssq_lyIrA8o";
-    const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews,rating,user_ratings_total&key=${apiKey}`;
-
-    try {
-      const response = await fetch(`https://corsproxy.io/?${encodeURIComponent(url)}`);
-      const data = await response.json();
-
-      const reviewsContainer = document.getElementById("reviews-container");
-      reviewsContainer.innerHTML = "";
-
-      const reviews = (data.result.reviews || []).slice(0, 5); // mostrar 5 reseñas
-
-      reviews.forEach((r) => {
-        const reviewCard = document.createElement("div");
-        reviewCard.className =
-          "bg-white shadow-lg rounded-2xl p-6 transition-transform transform hover:-translate-y-1 duration-300";
-
-        reviewCard.innerHTML = `
-          <div class="flex items-center mb-3">
-            <img src="${r.profile_photo_url || ''}" alt="foto usuario" class="w-10 h-10 rounded-full mr-3 border">
-            <div class="text-left">
-              <p class="font-semibold text-gray-800">${r.author_name}</p>
-              <p class="text-yellow-500 text-sm">⭐ ${r.rating}</p>
-            </div>
-          </div>
-          <p class="text-gray-600 italic">"${r.text}"</p>
-        `;
-
-        reviewsContainer.appendChild(reviewCard);
-      });
-    } catch (err) {
-      console.error("Error al obtener reseñas:", err);
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", loadGoogleReviews);
-</script>
   
 <section id="reviews" class="py-20 bg-gray-50 text-center">
   <h2 class="text-3xl font-bold text-gray-800 mb-6">Opiniones de nuestros clientes</h2>
@@ -331,10 +291,6 @@
 </a>
 
 </section>
-
-
- 
-
 <!-- Sección Contacto -->
 <!-- Contacto -->
 <section id="contacto" class="bg-[#fdfdfc] text-[#4a6670] py-10 px-4">

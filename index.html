@@ -414,38 +414,7 @@ const reseñas = data.reviews.filter(r => r.rating === 5).slice(0, 5);
   </div>
 </section>
 
-<section id="opiniones" class="bg-gray-50 py-12">
-  <div class="container mx-auto px-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
-    
-    <!-- Columna izquierda: valoracion -->
-    <div class="md:w-1/3 text-center md:text-left">
-      <h2 class="text-3xl font-semibold text-gray-800 mb-4">Opiniones de nuestros clientes</h2>
-      <div class="flex items-center justify-center md:justify-start mb-4">
-        <span id="rating" class="text-4xl font-bold text-yellow-500 mr-2">5.0</span>
-        <div class="flex text-yellow-400">
-          <i class="fa fa-star"></i><i class="fa fa-star"></i>
-          <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-        </div>
-      </div>
-      <a
-        href="https://www.google.com/maps/place/?q=place_id:ChIJoajCmdSBn5URXVK3LJmgrB8"
-        target="_blank"
-        class="text-gray-600 bg-white px-4 py-2 rounded transition hover:text-gray-800 hover:underline"
-      >
-        Dejá tu valoración en Google
-      </a>
-    </div>
-
-    <!-- Columna derecha: carrusel -->
-    <div class="md:w-2/3 relative overflow-hidden">
-      <div id="reviews-container" class="flex transition-transform duration-700 ease-in-out"></div>
-    </div>
-  </div>
-</section>
-
-
-
-
+  
 <script async
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcMWH6o18wXpqU2kFn3S7hssq_lyIrA8o&libraries=places&callback=initMap">
 </script>

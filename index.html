@@ -278,7 +278,7 @@
     
     <!-- Valoración general -->
     <div style="flex: 1; min-width: 280px; text-align: center;">
-      <h2 style="font-size: 2rem; margin-bottom: 10px; font-weight: bold;">Opiniones de nuestros clientes</h2>
+      <h2 style="font-size: 2rem; margin-bottom: 10px; font-weight: bold;">Valoracion de nuestros clientes</h2>
       <div id="valoracion" style="font-size: 1.2rem; margin-bottom: 15px;">⭐ Cargando valoración...</div>
       <a href="https://www.google.com/maps/place/?q=place_id:ChIJoajCmdSBn5URXVK3LJmgrB8" target="_blank"
          style="display: inline-block; padding: 10px 20px; border: 1px solid #ccc; border-radius: 8px;
@@ -316,7 +316,9 @@
       carrusel.innerHTML = "";
 
       if (data.reviews && data.reviews.length > 0) {
-        const reseñas = data.reviews.slice(0, 5);
+        // Filtramos solo las reseñas de 5 estrellas
+const reseñas = data.reviews.filter(r => r.rating === 5).slice(0, 5);
+
 
         reseñas.forEach(r => {
           const tarjeta = document.createElement("div");

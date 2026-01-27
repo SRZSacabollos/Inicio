@@ -337,6 +337,81 @@
         </a> 
       </div> 
   </section>
+
+  <!-- LIGHTBOX -->
+<div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 hidden z-50 flex items-center justify-center">
+  <button id="close-lightbox" class="absolute top-5 right-6 text-white text-4xl">&times;</button>
+  <button id="prev" class="absolute left-6 text-white text-5xl opacity-60 hover:opacity-100">&#10094;</button>
+
+  <div class="relative text-center">
+    <img id="lightbox-img" class="max-h-[85vh] max-w-[90vw] rounded-xl mx-auto">
+    <div id="lightbox-label"
+         class="mt-4 inline-block bg-black bg-opacity-70 px-6 py-2 rounded-full text-white text-lg font-bold">
+    </div>
+  </div>
+
+  <button id="next" class="absolute right-6 text-white text-5xl opacity-60 hover:opacity-100">&#10095;</button>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const images = document.querySelectorAll("#galeria img");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const label = document.getElementById("lightbox-label");
+  const closeBtn = document.getElementById("close-lightbox");
+  const prevBtn = document.getElementById("prev");
+  const nextBtn = document.getElementById("next");
+
+  let currentIndex = 0;
+
+  function showImage() {
+    const img = images[currentIndex];
+    lightboxImg.src = img.src;
+    label.textContent = (currentIndex + 1) % 2 === 1 ? "ANTES" : "DESPUÉS";
+  }
+
+  images.forEach((img, index) => {
+    img.style.cursor = "pointer";
+    img.addEventListener("click", () => {
+      currentIndex = index;
+      showImage();
+      lightbox.classList.remove("hidden");
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    lightbox.classList.add("hidden");
+  });
+
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (lightbox.classList.contains("hidden")) return;
+
+    if (e.key === "Escape") lightbox.classList.add("hidden");
+    if (e.key === "ArrowLeft") {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage();
+    }
+    if (e.key === "ArrowRight") {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage();
+    }
+  });
+
+});
+</script>
+
 <!-- INSTAGRAM SCRIPT (CLAVE) -->
 <script async src="https://www.instagram.com/embed.js"></script>
 <script>

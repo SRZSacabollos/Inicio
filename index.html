@@ -1,139 +1,167 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5TB6LDQJRR"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-5TB6LDQJRR');
-  </script>
-
-  <!-- Meta -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SRZ Sacabollos</title>
-  <meta name="description" content="Especialistas en desabollado artesanal sin dañar pintura. Reparación de granizo. Taller registrado.">
-  <meta name="keywords" content="sacabollos, desabollado sin pintar, granizo, PDR, Montevideo">
-  <meta name="author" content="SRZ Sacabollos">
-  <link rel="icon" href="favicon.png">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://srzsacabollos.uy/">
-  <meta property="og:title" content="SRZ Sacabollos">
-  <meta property="og:description" content="Especialistas en desabollado artesanal sin dañar pintura.">
-  <meta property="og:image" content="https://srzsacabollos.uy/imagen og.jpg">
-
-  <!-- Tailwind -->
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Fuente Aero -->
   <style>
     @font-face {
       font-family: 'Aero';
-      src: url('/Fuentes/Aero.woff2') format('woff2'),
-           url('/Fuentes/Aero.woff') format('woff');
+      src: url('./Fuentes/Aero.woff2') format('woff2'),
+           url('./Fuentes/Aero.woff') format('woff');
+      font-display: swap;
     }
 
     body {
       font-family: 'Aero', sans-serif;
     }
 
-    .instagram-media {
-      border-radius: 16px !important;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    /* Reels */
+    .reel-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.15);
+      transition: transform .3s ease;
+    }
+
+    .reel-card:hover {
+      transform: scale(1.03);
+    }
+
+    .reel-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .reel-card::after {
+      content: '▶';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 64px;
+      color: white;
+      background: rgba(0,0,0,.25);
     }
   </style>
-
 </head>
 
-<body class="bg-black text-white scroll-smooth">
+<body class="bg-white text-gray-700">
 
-<!-- ================= NAVBAR ================= -->
-<header class="bg-white shadow-md fixed top-0 w-full z-50">
-  <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
-    <a href="#inicio" class="flex items-center gap-2">
-      <img src="logo.png" class="h-10">
-      <span class="text-gray-800 text-xl">SRZ Sacabollos</span>
-    </a>
+  <!-- HEADER -->
+  <header class="bg-white shadow-sm fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <img src="./img/logo.png" alt="SRZ Sacabollos" class="h-10">
+      <nav class="space-x-6 hidden md:block">
+        <a href="#inicio" class="hover:text-gray-900">Inicio</a>
+        <a href="#servicios" class="hover:text-gray-900">Servicios</a>
+        <a href="#galeria" class="hover:text-gray-900">Galería</a>
+        <a href="#contacto" class="hover:text-gray-900">Contacto</a>
+      </nav>
+    </div>
+  </header>
 
-    <button id="menu-btn" class="sm:hidden text-gray-800 text-2xl">☰</button>
-
-    <nav id="menu" class="hidden sm:flex gap-6 text-gray-700">
-      <a href="#inicio">Inicio</a>
-      <a href="#galeria">Galería</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </div>
-
-  <div id="mobile-menu" class="hidden sm:hidden bg-white px-4 py-2">
-    <a href="#inicio" class="block py-2">Inicio</a>
-    <a href="#galeria" class="block py-2">Galería</a>
-    <a href="#contacto" class="block py-2">Contacto</a>
-  </div>
-</header>
-
-<div class="h-16"></div>
-
-<!-- ================= INICIO ================= -->
-<section id="inicio" class="h-screen flex items-center justify-center bg-cover bg-center" style="background-image:url('fondo.avif')">
-  <div class="bg-black/60 p-8 rounded-xl text-center">
-    <img src="logo.png" class="mx-auto mb-6 max-w-xs">
-    <h1 class="text-4xl md:text-5xl font-bold">
-      Defendiendo el legado del primer sacabollos del Uruguay
+  <!-- HERO -->
+  <section id="inicio" class="pt-32 pb-24 bg-gray-50 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-800">
+      Desabollado Artesanal
     </h1>
-  </div>
-</section>
+    <p class="mt-6 max-w-3xl mx-auto text-gray-600 text-lg">
+      Reparación profesional sin dañar la pintura original del vehículo
+    </p>
+  </section>
 
-<!-- ================= GALERÍA ================= -->
-<section id="galeria" class="bg-black py-12 px-4">
-  <h2 class="text-center text-3xl mb-8">Galería de trabajos</h2>
-  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
-    <!-- imágenes -->
-    <!-- (dejé intactas las tuyas) -->
-  </div>
-</section>
+  <!-- PRESENTACIÓN -->
+  <section class="bg-white py-20 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">
+        El arte del Sacabollos
+      </h2>
+      <p class="text-gray-600 leading-relaxed mb-10">
+        El método conocido como “SACABOLLOS”, consiste en la reparación artesanal,
+        permitiendo remover una amplia gama de abolladuras en las diferentes piezas
+        exteriores de un vehículo evitando re-pintarlas, siempre y cuando la superficie
+        o el cuerpo de la pintura no estén dañados. Este sistema mantiene el valor y
+        estado original del automóvil.
+      </p>
 
-<!-- ================= INSTAGRAM ================= -->
-<section class="bg-[#fdfdfc] py-16 px-4">
-  <div class="max-w-6xl mx-auto text-center mb-10">
-    <h2 class="text-3xl font-bold text-[#4a6670]">Nuestro Instagram</h2>
-    <p class="text-gray-500 mt-2">Últimos trabajos reales</p>
-  </div>
+      <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+        SRZ por F. Suárez
+      </h3>
+      <p class="text-gray-600 leading-relaxed">
+        Mi nombre es Fernando Suárez y llevo varios años dedicado a esta especialidad,
+        continuando una tradición familiar. Mi padre fue pionero del sacabollos en el país,
+        y con el tiempo fui perfeccionando este oficio con un sello propio, enfocado en
+        la excelencia y el detalle.
+      </p>
+    </div>
+  </section>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DTyUlJ3kRXz/" data-instgrm-version="14"></blockquote>
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQZywDGk7Lo/" data-instgrm-version="14"></blockquote>
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DP1Ki5-gZUe/" data-instgrm-version="14"></blockquote>
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DPeVWv4EW5i/" data-instgrm-version="14"></blockquote>
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DPFE4d-EaW0/" data-instgrm-version="14"></blockquote>
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DH_1JQGyJCq/" data-instgrm-version="14"></blockquote>
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DHY97wdpXu5/" data-instgrm-version="14"></blockquote>
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DHJxyk-JLYL/" data-instgrm-version="14"></blockquote>
-  </div>
-</section>
+  <!-- INSTAGRAM REELS -->
+  <section class="bg-gray-50 py-20 px-6">
+    <div class="max-w-6xl mx-auto text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-800">Nuestro Instagram</h2>
+      <p class="text-gray-500 mt-2">Trabajos reales, sin edición</p>
+    </div>
 
-<!-- ================= CONTACTO ================= -->
-<section id="contacto" class="bg-[#fdfdfc] text-[#4a6670] py-12 px-4">
-  <!-- tu sección contacto intacta -->
-</section>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-6xl mx-auto">
 
-<!-- ================= SCRIPTS ================= -->
-<script>
-  document.getElementById('menu-btn').onclick = () =>
-    document.getElementById('mobile-menu').classList.toggle('hidden');
-</script>
+      <a href="https://www.instagram.com/reel/REEL1/" target="_blank" class="reel-card">
+        <img src="./reels/reel1.jpg" alt="Reel SRZ">
+      </a>
 
-<!-- Instagram Embed -->
-<script async src="https://www.instagram.com/embed.js"></script>
-<script>
-  window.addEventListener('load', () => {
-    if (window.instgrm) window.instgrm.Embeds.process();
-  });
-</script>
+      <a href="https://www.instagram.com/reel/REEL2/" target="_blank" class="reel-card">
+        <img src="./reels/reel2.jpg">
+      </a>
+
+      <a href="https://www.instagram.com/reel/REEL3/" target="_blank" class="reel-card">
+        <img src="./reels/reel3.jpg">
+      </a>
+
+      <a href="https://www.instagram.com/reel/REEL4/" target="_blank" class="reel-card">
+        <img src="./reels/reel4.jpg">
+      </a>
+
+      <a href="https://www.instagram.com/reel/REEL5/" target="_blank" class="reel-card">
+        <img src="./reels/reel5.jpg">
+      </a>
+
+    </div>
+
+    <div class="text-center mt-10">
+      <a href="https://www.instagram.com/srzsacabollos/"
+         target="_blank"
+         class="text-gray-500 hover:text-gray-800 underline">
+        Ver perfil completo en Instagram
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="bg-white py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">Contacto</h2>
+      <p class="text-gray-600 mb-4">
+        Presidente Giró 2475 esq. Carlos Anaya
+      </p>
+      <p class="text-gray-600">
+        📞 WhatsApp | 📧 Email
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-100 py-6 text-center text-gray-500 text-sm">
+    © SRZ Sacabollos — Todos los derechos reservados
+  </footer>
 
 </body>
 </html>

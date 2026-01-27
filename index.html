@@ -1,167 +1,121 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SRZ Sacabollos</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>SRZ Sacabollos | Desabollado artesanal sin pintura</title>
 
-  <!-- Fuente Aero -->
+  <!-- SEO -->
+  <meta name="description" content="SRZ Sacabollos – Desabollado artesanal sin dañar la pintura. Mantiene el valor original de tu vehículo. Fernando Suárez." />
+  <meta property="og:title" content="SRZ Sacabollos" />
+  <meta property="og:description" content="Especialistas en desabollado artesanal sin pintura." />
+  <meta property="og:image" content="imagen og.jpg" />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="favicono.png" />
+
+  <!-- Fuente AERO -->
   <style>
     @font-face {
       font-family: 'Aero';
-      src: url('./Fuentes/Aero.woff2') format('woff2'),
-           url('./Fuentes/Aero.woff') format('woff');
-      font-display: swap;
+      src: url('Fuentes/Aero.woff2') format('woff2'),
+           url('Fuentes/Aero.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
     }
 
     body {
-      font-family: 'Aero', sans-serif;
+      margin: 0;
+      font-family: 'Aero', system-ui, sans-serif;
+      background-color: #ffffff;
+      color: #4b5563;
     }
 
-    /* Reels */
-    .reel-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,.15);
-      transition: transform .3s ease;
+    section {
+      padding: 80px 20px;
     }
 
-    .reel-card:hover {
-      transform: scale(1.03);
-    }
-
-    .reel-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .reel-card::after {
-      content: '▶';
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 64px;
-      color: white;
-      background: rgba(0,0,0,.25);
+    h1, h2 {
+      text-align: center;
+      color: #374151;
     }
   </style>
 </head>
 
-<body class="bg-white text-gray-700">
+<body>
 
-  <!-- HEADER -->
-  <header class="bg-white shadow-sm fixed w-full z-50">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <img src="./img/logo.png" alt="SRZ Sacabollos" class="h-10">
-      <nav class="space-x-6 hidden md:block">
-        <a href="#inicio" class="hover:text-gray-900">Inicio</a>
-        <a href="#servicios" class="hover:text-gray-900">Servicios</a>
-        <a href="#galeria" class="hover:text-gray-900">Galería</a>
-        <a href="#contacto" class="hover:text-gray-900">Contacto</a>
-      </nav>
-    </div>
-  </header>
+<!-- HERO -->
+<section style="background:url('fondo.avif') center/cover no-repeat; min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+  <img src="logotipo.png" alt="SRZ Sacabollos" style="max-width:260px; margin-bottom:30px;">
+  <h1>Desabollado artesanal sin pintura</h1>
+</section>
 
-  <!-- HERO -->
-  <section id="inicio" class="pt-32 pb-24 bg-gray-50 text-center">
-    <h1 class="text-4xl md:text-5xl font-bold text-gray-800">
-      Desabollado Artesanal
-    </h1>
-    <p class="mt-6 max-w-3xl mx-auto text-gray-600 text-lg">
-      Reparación profesional sin dañar la pintura original del vehículo
+<!-- PRESENTACIÓN -->
+<section>
+  <div style="max-width:900px; margin:auto; display:grid; gap:40px;">
+    <img src="presentacion.avif" alt="Presentación SRZ" style="width:100%; border-radius:12px;">
+    <p>
+      El método conocido como <strong>SACABOLLOS</strong> consiste en la reparación artesanal que permite remover una amplia gama de abolladuras sin necesidad de repintar, siempre que la pintura no esté dañada.  
+      <br><br>
+      <strong>SRZ por F. Suárez</strong><br>
+      Mi nombre es Fernando Suárez y me dedico a esta especialidad desde muy joven, siguiendo una tradición familiar. Con el tiempo, perfeccioné este oficio con mi propio sello personal para brindar el mejor resultado a mis clientes.
     </p>
-  </section>
+  </div>
+</section>
 
-  <!-- PRESENTACIÓN -->
-  <section class="bg-white py-20 px-6">
-    <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-gray-800 mb-6">
-        El arte del Sacabollos
-      </h2>
-      <p class="text-gray-600 leading-relaxed mb-10">
-        El método conocido como “SACABOLLOS”, consiste en la reparación artesanal,
-        permitiendo remover una amplia gama de abolladuras en las diferentes piezas
-        exteriores de un vehículo evitando re-pintarlas, siempre y cuando la superficie
-        o el cuerpo de la pintura no estén dañados. Este sistema mantiene el valor y
-        estado original del automóvil.
-      </p>
+<!-- GALERÍA -->
+<section>
+  <h2>Galería de trabajos</h2>
 
-      <h3 class="text-2xl font-semibold text-gray-800 mb-4">
-        SRZ por F. Suárez
-      </h3>
-      <p class="text-gray-600 leading-relaxed">
-        Mi nombre es Fernando Suárez y llevo varios años dedicado a esta especialidad,
-        continuando una tradición familiar. Mi padre fue pionero del sacabollos en el país,
-        y con el tiempo fui perfeccionando este oficio con un sello propio, enfocado en
-        la excelencia y el detalle.
-      </p>
-    </div>
-  </section>
+  <div style="
+    max-width:1200px;
+    margin:60px auto 0;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+  ">
+    <!-- 32 imágenes -->
+    <!-- IMPORTANTE: rutas exactas -->
+    <!-- Del 1 al 32 -->
+    <script>
+      for(let i=1;i<=32;i++){
+        document.write(`
+          <img src="galeria/${i}.jpg"
+               alt="Trabajo ${i}"
+               style="width:100%; border-radius:12px;">
+        `);
+      }
+    </script>
+  </div>
+</section>
 
-  <!-- INSTAGRAM REELS -->
-  <section class="bg-gray-50 py-20 px-6">
-    <div class="max-w-6xl mx-auto text-center mb-12">
-      <h2 class="text-3xl font-bold text-gray-800">Nuestro Instagram</h2>
-      <p class="text-gray-500 mt-2">Trabajos reales, sin edición</p>
-    </div>
+<!-- CONTACTO -->
+<section style="background:#f9fafb;">
+  <h2>Contacto</h2>
 
-    <div class="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-6xl mx-auto">
-
-      <a href="https://www.instagram.com/reel/REEL1/" target="_blank" class="reel-card">
-        <img src="./reels/reel1.jpg" alt="Reel SRZ">
-      </a>
-
-      <a href="https://www.instagram.com/reel/REEL2/" target="_blank" class="reel-card">
-        <img src="./reels/reel2.jpg">
-      </a>
-
-      <a href="https://www.instagram.com/reel/REEL3/" target="_blank" class="reel-card">
-        <img src="./reels/reel3.jpg">
-      </a>
-
-      <a href="https://www.instagram.com/reel/REEL4/" target="_blank" class="reel-card">
-        <img src="./reels/reel4.jpg">
-      </a>
-
-      <a href="https://www.instagram.com/reel/REEL5/" target="_blank" class="reel-card">
-        <img src="./reels/reel5.jpg">
-      </a>
-
+  <div style="max-width:800px; margin:50px auto; display:grid; gap:30px;">
+    <div style="display:flex; align-items:center; gap:15px;">
+      <img src="iconos/WhatsApp.png" width="32">
+      <span>WhatsApp</span>
     </div>
 
-    <div class="text-center mt-10">
-      <a href="https://www.instagram.com/srzsacabollos/"
-         target="_blank"
-         class="text-gray-500 hover:text-gray-800 underline">
-        Ver perfil completo en Instagram
-      </a>
+    <div style="display:flex; align-items:center; gap:15px;">
+      <img src="iconos/instagram.png" width="32">
+      <span>Instagram</span>
     </div>
-  </section>
 
-  <!-- CONTACTO -->
-  <section id="contacto" class="bg-white py-20 px-6">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-gray-800 mb-6">Contacto</h2>
-      <p class="text-gray-600 mb-4">
-        Presidente Giró 2475 esq. Carlos Anaya
-      </p>
-      <p class="text-gray-600">
-        📞 WhatsApp | 📧 Email
-      </p>
+    <div style="display:flex; align-items:center; gap:15px;">
+      <img src="iconos/correo.png" width="32">
+      <span>Email</span>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-gray-100 py-6 text-center text-gray-500 text-sm">
-    © SRZ Sacabollos — Todos los derechos reservados
-  </footer>
+    <div style="display:flex; align-items:center; gap:15px;">
+      <img src="iconos/direccion.png" width="32">
+      <span>Presidente Giró 2475 esq. Carlos Anaya</span>
+    </div>
+  </div>
+</section>
 
 </body>
 </html>
